@@ -1,109 +1,131 @@
-# FarmDirect Backend
+# FarmDirect
 
-A backend API for the FarmDirect platform, connecting farmers directly with consumers.
+FarmDirect is a digital platform designed to connect farmers in Tamil Nadu directly with consumers, eliminating middlemen to provide better income for farmers and fresher, potentially lower-priced produce for consumers. The platform aims to create a transparent supply chain and foster community connections between farmers and consumers.
 
-## Features
+## Table of Contents
 
-- **Authentication System**: Complete user authentication with JWT tokens
-- **User Management**: User profiles, farmer profiles, and consumer profiles
-- **Product Management**: Complete CRUD for managing farm products
-- **Order Management**: Order processing and tracking
-- **Role-Based Access Control**: Different permissions for farmers, consumers, and admins
+- [Project Purpose](#project-purpose)
+- [Technology Stack](#technology-stack)
+- [Data Models](#data-models)
+- [User Interface](#user-interface)
+- [Unique Selling Points](#unique-selling-points)
+- [Project Scope](#project-scope)
+- [Core Features](#core-features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Getting Started
+## Project Purpose
 
-### Prerequisites
+FarmDirect aims to create a transparent supply chain and foster community connections between farmers and consumers.
 
-- Node.js (v14 or higher)
-- MongoDB (v4 or higher)
+## Technology Stack
 
-### Installation
+- **Frontend**: Next.js (React framework), TypeScript/JavaScript, Tailwind CSS, Framer Motion
+- **Backend**: Next.js API routes (serverless Node.js functions)
+- **Database**: MongoDB with Mongoose ODM
+- **Authentication**: JWT-based authentication
+- **UI Libraries**: React Icons, Next Themes 
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/sanjithdoescode/farmdirect.git
-   cd farmdirect
-   ```
+## Data Models
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+1. **User**: Basic user information, authentication, addresses, and role management
+2. **FarmerProfile**: Detailed farmer information, farm details, certifications, ratings
+3. **ConsumerProfile**: Consumer preferences, saved addresses, favorite products/farmers
+4. **Product**: Comprehensive product details including nutritional info, seasonality, availability
+5. **Order**: Order processing, payment tracking, delivery management
+6. **CropAdoption**: Community feature allowing consumers to adopt crops
+7. **ForumPost**: Community discussion forum posts
+8. **Comment**: Comments on forum posts
 
-3. Create a `.env` file in the root directory with:
-   ```
-   MONGODB_URI=mongodb://localhost:27017/farmdirect
-   JWT_SECRET=your-secret-key-change-in-production
-   JWT_REFRESH_SECRET=your-refresh-secret-key-change-in-production
-   ```
+## User Interface
 
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+- Modern, clean design using Tailwind CSS
+- Responsive layout for different devices
+- Interactive components with animations using Framer Motion
+- Multilingual interface
+- Focus on simplicity for accessibility to both farmers and consumers
 
-## API Endpoints
+## Unique Selling Points
 
-### Authentication
+1. **Direct Farmer-Consumer Connection**: Eliminates middlemen for better prices and fresher produce
+2. **Product Traceability**: Consumers can track the journey of their food from farm to table
+3. **Community Building**: Various features to strengthen the relationship between farmers and consumers
+4. **Sustainability Focus**: Carbon footprint tracking, organic certifications, and sustainable farming practices
 
-- **POST /api/auth/register** - Register a new user
-- **POST /api/auth/login** - Login and get access tokens
-- **POST /api/auth/refresh** - Refresh access token
-- **POST /api/auth/logout** - Logout and invalidate tokens
+## Project Scope
 
-### User Profiles
+- Web application
+- Android application planned (mentioned in the requirements)
+- Dual interfaces for farmers and consumers
 
-- **GET /api/users/profile** - Get user profile
-- **PUT /api/users/profile** - Update user profile
+## Core Features
 
-### Farmer Profiles
+### 1. User Management
 
-- **GET /api/farmer/profile** - Get farmer profile
-- **POST /api/farmer/profile** - Create or update farmer profile
-- **PUT /api/farmer/profile** - Update farmer profile
+- Multi-role user system (farmers, consumers, admins)
+- Separate profiles for farmers and consumers
+- Authentication with JWT tokens
+- Multilingual support (English and Tamil)
 
-### Consumer Profiles
+### 2. Marketplace
 
-- **GET /api/consumer/profile** - Get consumer profile
-- **POST /api/consumer/profile** - Create or update consumer profile
-- **PUT /api/consumer/profile** - Update consumer profile
+- Product listings with detailed information (description, price, unit, quantity, organic status)
+- Product search, filtering, and sorting
+- Shopping cart functionality
+- Ordering system with different payment methods
+- Product ratings and reviews
 
-### Products
+### 3. Farmer Features
 
-- **GET /api/products** - List products (with filtering and pagination)
-- **POST /api/products** - Create a new product
-- **GET /api/products/:id** - Get a specific product
-- **PUT /api/products/:id** - Update a product
-- **DELETE /api/products/:id** - Delete a product
+- Detailed farmer profiles with farm information, certifications, and specialties
+- Product management system for farmers to list their produce
+- Order management for farmers to track and fulfill orders
+- Ratings and feedback system
 
-## Testing
+### 4. Consumer Features
 
-Run all tests:
+- Saved addresses for delivery
+- Favorite products and farmers
+- Purchase history
+- Preference settings for notifications
+
+### 5. Product Traceability
+
+- Supply chain journey tracking from farm to consumer
+- Information on farming practices
+- Carbon footprint estimation
+- QR code verification system for products
+
+### 6. Community Features
+
+- Crop adoption program (consumers can adopt crops and follow their growth)
+- Community voting (consumers can influence what farmers grow)
+- Community Supported Agriculture (CSA) programs
+- Harvest day events and farm tours
+- Discussion forum for knowledge sharing and community building
+
+## Installation
+
+To get started with the project, clone the repository and install the dependencies:
+
 ```bash
-npm test
+git clone <repository-url>
+cd FarmDirect
+npm install
 ```
 
-Run specific tests:
-```bash
-npm test -- tests/api/auth.test.js
-```
+## Usage
 
-## Manual Testing
-
-You can use cURL to test the endpoints manually. Example:
+To run the development server:
 
 ```bash
-# Register a new user
-curl -X POST http://localhost:3000/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password123","fullName":"Test User"}'
-
-# Login
-curl -X POST http://localhost:3000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password123"}'
+npm run dev
 ```
+
+Visit `http://localhost:3000` in your browser.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
