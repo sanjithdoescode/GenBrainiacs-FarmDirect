@@ -1,7 +1,5 @@
 # FarmDirect
 
-![FarmDirect Logo](public/images/logo.png)
-
 FarmDirect is a digital platform revolutionizing local agriculture by directly connecting farmers in Tamil Nadu with consumers. By eliminating middlemen, we empower farmers with better income while providing consumers with fresher, more affordable produce. Beyond just a marketplace, FarmDirect creates a transparent supply chain and fosters meaningful community connections between food producers and consumers.
 
 [![Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
@@ -323,10 +321,6 @@ FarmDirect offers specialized interfaces for different user roles:
 - Advanced community features
 - Integration with sustainable delivery networks
 - Advanced AI features powered by Gemini API
-
-## 👥 Contributing
-
-We welcome contributions to FarmDirect! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details on how to get involved.
 
 ## 📄 License
 
